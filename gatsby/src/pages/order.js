@@ -15,6 +15,7 @@ export default function OrderPage({ data }) {
   const { values, updateValue } = useForm({
     name: '',
     email: '',
+    panal: '',
   });
   const pizzas = data.pizzas.nodes;
   const {
@@ -58,6 +59,12 @@ export default function OrderPage({ data }) {
               onChange={updateValue}
             />
           </label>
+          <input
+            type="panal"
+            name="panal"
+            value={values.panal}
+            className="panal"
+          />
         </fieldset>
         <fieldset className="menu" disabled={loading}>
           <legend>Menu</legend>

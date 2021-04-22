@@ -28,6 +28,10 @@ const OrderStyles = styled.form`
       width: 256px;
       margin: 0 auto;
     }
+
+    & .panal {
+      display: none;
+    }
   }
 
   /* @media(max-width: 900px) {

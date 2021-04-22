@@ -36,14 +36,22 @@ const transporter = nodemailer.createTransport({
 });
 
 function wait(ms) {
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve) => {
     setTimeout(resolve, ms);
   });
 }
 
-exports.handler = async (event, context) => {
+exports.handler = async (event) => {
   await wait(5000);
   const body = JSON.parse(event.body);
+
+  // Check if bot filled out miel
+  if (body.panal) {
+    return {
+      statusCode: 400,
+      body: JSON.stringify({ message: 'Identity theft is not a joke, Jim!' }),
+    };
+  }
 
   // Validate incoming data is correct
   const requiredFields = ['email', 'name', 'order'];
