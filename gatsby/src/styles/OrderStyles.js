@@ -34,6 +34,12 @@ const OrderStyles = styled.form`
     }
   }
 
+  .tilt {
+    transform: rotate(-2deg);
+    position: relative;
+    display: inline-block;
+  }
+
   /* @media(max-width: 900px) {
     fieldset.menu,
     fieldset.order {
