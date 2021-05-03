@@ -20,7 +20,7 @@ export default function SlicemasterPage({ data: { slicemaster } }) {
 
 export const query = graphql`
   query($slug: String!) {
-    slicemaster: sanityName(slug: { current: { eq: $slug } }) {
+    slicemaster: sanityPerson(slug: { current: { eq: $slug } }) {
       name
       description
       image {
